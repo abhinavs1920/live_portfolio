@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles can be added here */
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const roleTitles = ["App Developer", "Backend Developer", "Open Source Contributor", "Java Developer", "IIITIAN", "DevOps Engineer"];
+      let currentIndex = 0;
+      function updateRoleTitle() {
+        const roleElement = document.getElementById("role-title");
+        roleElement.classList.remove("animate-fade-out");
+        roleElement.textContent = roleTitles[currentIndex];
+        roleElement.classList.add("animate-fade-in");
+        currentIndex = (currentIndex + 1) % roleTitles.length;
+        setTimeout(function() {
+          roleElement.classList.remove("animate-fade-in");
+          roleElement.classList.add("animate-fade-out");
+          setTimeout(updateRoleTitle, 1000);
+        }, 2000);
+      }
+
+      updateRoleTitle();
+    });
+  </script>
+</head>
+
+<body style="margin:100;padding:20">
+  <nav class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div>
+        <a href="#" class="text-lg font-bold">Portfolio</a>
+      </div>
+      <div>
+        <ul class="flex space-x-4">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="bg-indigo-500 text-white py-10">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold animate-bounce">Abhinav Sharma</h1>
+      <p id="role-title" class="text-lg mt-4 animate-fade-out">App Developer</p>
+    </div>
+  </header>
+  <section id="skills" class="bg-gray-100 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-pulse">Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Frontend Skills -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Frontend Skills</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Flutter</li>
+          </ul>
+        </div>
+        <!-- Backend Skills -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Backend Skills</h3>
+          <ul>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>Flask</li>
+          </ul>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">DevOps Skills</h3>
+          <ul>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>Git and Github</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-pulse">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 md:mx-2 lg:mx-0">
+          <h3 class="text-xl font-bold mb-2">Thesus</h3>
+          <p class="text-gray-600">WebApp for finding the short report of any article or research paper.
+            This WebApp is made using Flutter.It uses GPT-3 API which is responsible for producing fast results.</p>
+          <a href="https://github.com/abhinavs1920/Thesus" class="text-indigo-500 mt-4 inline-block">Learn More</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 md:mx-2 lg:mx-0">
+          <h3 class="text-xl font-bold mb-2">MapIt</h3>
+          <p class="text-gray-600">App for saving location-based notes in the cloud.
+            It will help you save your location-specific notes instantaneously.
+            You can visit your old notes in a matter of seconds from the cloud.
+            Will send notifications for important notes when a user visits the related location.</p>
+          <a href="https://github.com/abhinavs1920/MapIt" class="text-indigo-500 mt-4 inline-block">Learn More</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 md:mx-2 lg:mx-0">
+          <h3 class="text-xl font-bold mb-2">BookStore Management System</h3>
+          <p class="text-gray-600">General, bookstore management system made using SpringBoot.Has power to work over Apache Tomcat server.</p>
+          <a href="https://github.com/abhinavs1920/BookStore_Springboot" class="text-indigo-500 mt-4 inline-block">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-300 py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 animate-pulse">Check out my blog</h2>
+      <p class="text-gray-600 animate-fade-in">Visit my blog to read articles about web development, programming, and more.</p>
+      <a href="" class="mt-4 inline-block bg-indigo-500 text-white px-6 py-3 rounded hover:bg-indigo-700 transition-colors animate-pulse">Go to Blog</a>
+    </div>
+  </section>
+
+
+
+  <section class="bg-gray-200 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-pulse">About Me</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="p-6">
+          <img src="my-portfolio\public\profile_image.jpeg" alt="Your Profile Picture" class="rounded-full mx-auto w-40 h-40 object-cover object-center animate-bounceIn">
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600 animate-slide-right">I am Abhinav, an Android developer proficient in Java, Flask, Flutter, and Spring Boot. As a student at IIIT Gwalior, my primary focus is gaining valuable development experience. I am eager to contribute to a dynamic team that specializes in mobile app development and innovative solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="bg-gray-500 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 animate-pulse">Contact</h2>
+      <div className="text-center">
+        <p className="text-xl">Phone: +91 9479960041</p>
+        <p className="text-xl">Email: abhinavs1920bpl@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 Abhinav Sharma. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
